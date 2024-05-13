@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!--<DevelopmentDependency>true</DevelopmentDependency>-->
+    <!--<IncludeBuildOutput>false</IncludeBuildOutput>-->
+
+    <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
+    <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+    <WarningsAsErrors>true</WarningsAsErrors>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <NoWarn>NU5128</NoWarn>
+
+    <PackageOutputPath>d:\PKG\local-nuget\</PackageOutputPath>
+
+    <Version>1.0.4</Version>
+
+    <Title>Cloudsiders Kinetic2</Title>
+    <Authors>Cloudsiders.com</Authors>
+    <Company>Cloudsiders.com</Company>
+    <Product>Cloudsiders Kinetic2</Product>
+    <Copyright>(c) 2024 Cloudsiders.com</Copyright>
+    <PackageProjectUrl>https://github.com/dlosch</PackageProjectUrl>
+    <Description>Sample source generator project to add resilience pipelines to methods.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Polly" Version="8.3.1" />
+    <PackageReference Include="Polly.RateLimiting" Version="8.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Polly.Extensions" Version="8.3.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="../readme.md" Link="readme.md" Pack="true" PackagePath="/" />
+    <None Include="../Kinetic2.Analyzers/bin/$(Configuration)/netstandard2.0/Kinetic2.Analyzers.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="true" />
+  </ItemGroup>
+
+</Project>

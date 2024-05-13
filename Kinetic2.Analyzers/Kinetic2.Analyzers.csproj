@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+
+    <!--<GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>-->
+    <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+    <WarningsAsErrors>true</WarningsAsErrors>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <NoWarn>NU5128</NoWarn>
+
+    <!--<PackageOutputPath>d:\PKG\local-nuget\</PackageOutputPath>-->
+
+    <Version>1.0.4</Version>
+    <Title>Cloudsiders Kinetic2</Title>
+    <Authors>Cloudsiders.com</Authors>
+    <Company>Cloudsiders.com</Company>
+    <Product>Cloudsiders Kinetic2</Product>
+    <Copyright>(c) 2024 Cloudsiders.com</Copyright>
+    <PackageProjectUrl>https://github.com/dlosch</PackageProjectUrl>
+    <Description>Sample source generator project to add resilience pipelines to methods.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.9.2" Pack="false" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="../Kinetic2.Core/ResiliencePipelineAttribute.cs"></Compile>
+    <!--<EmbeddedResource Include="../Kinetic2.Core/ResilienceExtensions.cs" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../readme.md" Link="readme.md" Pack="true" PackagePath="/" />
+    <None Include="./bin/$(Configuration)/netstandard2.0/Kinetic2.Analyzers.dll" Pack="true" PackagePath="analyzers/dotnet" Visible="true" />
+  </ItemGroup>
+
+</Project>
