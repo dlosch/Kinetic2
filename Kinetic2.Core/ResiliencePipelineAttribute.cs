@@ -1,5 +1,6 @@
 ﻿namespace Kinetic2;
 
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
 public sealed class ResiliencePipelineAttribute : Attribute {
     public string PipelineName { get; }
     public string? ActivitySpanName { get; }
