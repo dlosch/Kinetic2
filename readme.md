@@ -48,7 +48,7 @@ internal class UserOnboardingService(INotificationService _notificationService) 
 ```
 note: I don't like primary constructors that much ...
 
-## Adding reslience ... how does it work?
+## Adding resilience ... how does it work?
 First, you add a reference to Polly and possibly related Polly nugets like Polly.RateLimiting ...
 ```
     <PackageReference Include="Polly" Version="8.3.1" />
